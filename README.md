@@ -1,4 +1,5 @@
 #Coding_Alprog
+
 var SS = SpreadsheetApp.openById('MASUKKAN SHEET ID');
 var hours = 0
 var str = "";
@@ -32,8 +33,7 @@ function doPost(e) {
     var nama              = dataArr     [0]; 
     var nim               = dataArr     [1]; 
     var jurusan           = dataArr     [2]; 
-    var prodi             = dataArr     [3]; 
-    var jenis_kelamin     = dataArr     [4]; 
+    var prodi             = dataArr     [3];  
   
     switch (parsedData.command) {
       
@@ -46,7 +46,6 @@ function doPost(e) {
           sheet.getRange("D" + nextRow).setValue(nim);
           sheet.getRange("E" + nextRow).setValue(jurusan);
           sheet.getRange("F" + nextRow).setValue(prodi);
-          sheet.getRange("G" + nextRow).setValue(jenis_kelamin);
          
          str = "Success"; 
          SpreadsheetApp.flush();
@@ -60,7 +59,6 @@ function doPost(e) {
          publish_array [1] = nim; 
          publish_array [2] = jurusan;  
          publish_array [3] = prodi;   
-         publish_array [4] = jenis_kelamin; 
          
          sheet.appendRow(publish_array); 
          
